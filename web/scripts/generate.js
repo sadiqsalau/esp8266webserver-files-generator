@@ -91,8 +91,8 @@ function getCPPDeclaration(variableName, hexlist)
 }
 
 /**
- * Returns a CPP Valid variable by replacing any character that is not a number,
- * capital or small alphabets with underscore
+ * Returns a CPP Valid variable name by 
+ * hashing the file path
  * @param {String} path - The file path
  * @returns String 
  */
