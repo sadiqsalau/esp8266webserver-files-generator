@@ -69,14 +69,6 @@ function getWebFilesList(sourceList, configList, base='')
             configList.push(
                 getCPPServerConfig(entrypath, variableName, mime)
             );
-
-            // Checks if the entry is named "index.html"
-            if("index.html" == entry.name && (base=='' || config.USE_INDEX_HTML_FOR_DIR))
-            {
-                configList.push(
-                    getCPPServerConfig(base, variableName, mime)
-                );
-            }
         }
     }
 
