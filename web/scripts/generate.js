@@ -3,6 +3,7 @@
  */
 const fs = require("fs");
 const path = require("path");
+const crypto = require('crypto');
 const config = require('../config'); // The config file
 const MIME_DB = require('../mime-db.json'); // The MIME DB
 
@@ -97,7 +98,7 @@ function getCPPDeclaration(variableName, hexlist)
  */
 function getCPPVariableName(path)
 {
-    return `webfile_${path.replaceAll(/[^a-zA-Z\d]/g, '_')}`;
+    return `webfile_${crypto.createHash('sha1').update(path).digest('hex')}`;
 }
 
 /**
